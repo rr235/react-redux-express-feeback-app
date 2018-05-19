@@ -1,0 +1,15 @@
+{
+  "name": "feedback-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rr235@bitbucket.org/rr235/feedback-app.git"
+  },
+  "author": "rahulr",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rr235/feedback-app#readme"
+}
