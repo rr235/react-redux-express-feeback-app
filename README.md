@@ -40,3 +40,9 @@ https://www.npmjs.com/package/eslint-config-airbnb
 [**eslint-plugin-prettier**](https://github.com/prettier/eslint-plugin-prettier) is the eslint plugin for prettier formatting.
 
 **eslint-config** is needed for VSCode to intergrate prettier with eslint config. Also set `"prettier.eslintIntegration": true` in the workspace settings
+
+> Manually running eslint
+>
+> `cd server`  
+> `npx eslint .` or `node_modules/.bin/eslint .` - shows errors and warnings  
+> `npx eslint . --fix` or `node_modules/.bin/eslint . --fix` - Fixes autofixable issues
