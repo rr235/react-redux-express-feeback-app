@@ -46,3 +46,36 @@ https://www.npmjs.com/package/eslint-config-airbnb
 > `cd server`  
 > `npx eslint .` or `node_modules/.bin/eslint .` - shows errors and warnings  
 > `npx eslint . --fix` or `node_modules/.bin/eslint . --fix` - Fixes autofixable issues
+
+### 3. Deployment checklist
+
+#### 3.1 Dynamic Port Binding
+
+Use `process.env.PORT`
+
+#### 3.2 Specify node environment
+
+In _package.json_, set engines -> node, npm
+
+Example:
+
+```json
+"engines": {
+    "node": "8.9.1",
+    "npm": "5.6.0"
+  }
+```
+
+#### 3.3 Specify start script
+
+In _package.json_, set scripts -> start
+
+Example:
+
+```json
+"scripts": {
+    "start": "node index.js"
+  }
+```
+
+#### 3.4 Create `.gitignore` file
