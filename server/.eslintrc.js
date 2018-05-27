@@ -6,10 +6,9 @@ module.exports = {
       // customizing prettier rules
       'error',
       {
-        singleQuote: true,
-        trailingComma: 'all',
-      },
+        singleQuote: true
+      }
     ],
-    eqeqeq: ['error', 'always'], // adding some custom ESLint rules
-  },
+    eqeqeq: ['error', 'always'] // adding some custom ESLint rules
+  }
 };
