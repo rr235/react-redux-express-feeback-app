@@ -47,6 +47,10 @@ https://www.npmjs.com/package/eslint-config-airbnb
 > `npx eslint .` or `node_modules/.bin/eslint .` - shows errors and warnings  
 > `npx eslint . --fix` or `node_modules/.bin/eslint . --fix` - Fixes autofixable issues
 
+#### 2.2 Server-side File Watcher
+
+[**Nodemon**](https://github.com/remy/nodemon) is used to watch the file changes
+
 ### 3. Deployment checklist
 
 #### 3.1 Dynamic Port Binding
@@ -79,3 +83,22 @@ Example:
 ```
 
 #### 3.4 Create `.gitignore` file
+
+Make sure you have `.gitignore` file.
+
+### 4. Heroku Deployment
+
+Push code to the heroku git repo. `git push` triggers the build and the deploy process.
+
+```shell
+git push heroku master
+```
+
+Heroku cli git deployment docs can be found [here](https://devcenter.heroku.com/articles/git).
+
+### 5. Google OAuth Setup
+
+[PassportJS](http://www.passportjs.org/) is used to authenticate user through Google OAuth.
+
+[Passport Google OAuth 2.0](https://github.com/jaredhanson/passport-google-oauth2) is the stegery used.
+Note: npm package is `passport-google-oauth20`
