@@ -102,3 +102,21 @@ Heroku cli git deployment docs can be found [here](https://devcenter.heroku.com/
 
 [Passport Google OAuth 2.0](https://github.com/jaredhanson/passport-google-oauth2) is the stegery used.
 Note: npm package is `passport-google-oauth20`
+
+The general flow is, when the request comes in the express app handles the request and gets the passport to intialize the process `passport.initialize()` and authenticates the user `passport.authenticate()`.
+
+### 6. Data Storage
+
+MongoDB is used for data storage. [MongooseJS](http://mongoosejs.com/) is used to model the data for MongoDB.
+
+### 6. Session Management
+
+[cookie-session](https://www.npmjs.com/package/cookie-session) is used as a middleware to manage session.
+
+A user session can be stored in two main ways with cookies: on the server or on the client. This module stores the session data on the client within a cookie, while a module like [express-session](https://www.npmjs.com/package/express-session) stores only a session identifier on the client within a cookie and stores the session data on the server, typically in a database.
+
+Basically when we use _cookie-session_ we store data in the cookie. If its only few info that required to be stored (in my case MongoDB user id), cookie-session is the best choice. But if you need to store multiple data (and you think it can be more than 4kb in size) then go for _express-session_
+
+### 8. Data Serialization
+
+Once the user is authenticated, we use pasport js to add in id (id of the user in mongodb) to the cookie through `passport.serializeUser`. `passport.deserializeUser` is used to retreive the id from cookie.
