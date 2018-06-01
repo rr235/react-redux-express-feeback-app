@@ -1,8 +1,8 @@
-const dev = require('./dev');
-const prod = require('./prod');
-
+/* eslint-disable */
+// Unfortunately using const to get module before if condition
+// didnt work on heroku. Hence using inline require.
 if (process.env.NODE_ENV === 'production') {
-  module.exports = prod;
+  module.exports = require('./prod');
 } else {
-  module.exports = dev;
+  module.exports = require('./dev');
 }
