@@ -1,6 +1,6 @@
 # Feedback App
 
-This is a tryout app. Main focus of this esercise is to
+This is a tryout app. Main focus of this exercise is to
 
 * Set up a proper dev environement
 * Create an End to End application
@@ -120,3 +120,18 @@ Basically when we use _cookie-session_ we store data in the cookie. If its only 
 ### 8. Data Serialization
 
 Once the user is authenticated, we use pasport js to add in id (id of the user in mongodb) to the cookie through `passport.serializeUser`. `passport.deserializeUser` is used to retreive the id from cookie.
+
+### 9. Client server
+
+I am using [create-react-app](https://github.com/facebook/create-react-app) for frontend devlopment. _Create-React-App(CRA)_ has a server on its own for the frontend dev environment, which runs at http://localhost:3000. This is different from http://localhost:5000 which is the Express Server for MongoDB interaction and Google OAuth. In the dev environment I am using [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run both servers simultaneously(actually just running both `client` and `dev` npm scripts ;)). Parallel script running packages like [npm-run-all](https://github.com/mysticatea/npm-run-all) or concurrently provides cross platform(eg: windows) support.
+
+CRA has webpack, babel, HMR, etc already setup.
+
+> _CRA_ wont ever be running at production environment, since the react app will be bundled and deployed.
+
+### 10. Use of proxy for '/auth/google' in client server
+
+Proxy is set in `package.json` to target http://localhost:5000 while redirected to path `'/auth/google'`. Two main reasons are
+
+* Cookie Access - By default browser can share cookie only with the current domain (localhost:3000). Proxy does the hard work of taking the cookie from `localhost:3000` and copying to the request to `localhost:5000`. And then express server takes care of authentication process and redirects back to `localhost:3000`
+* Cross Origin Resource Sharing - Use of proxy also help overcome the CORS issue by not directly communicating with `localhost:5000`
