@@ -1,4 +1,8 @@
 {
   "editor.formatOnSave": true,
-  "prettier.eslintIntegration": true
+  "prettier.eslintIntegration": true,
+  "files.associations": {
+    "**/server/client/src/components/*.js": "javascriptreact",
+    "**/server/client/src/index.js": "javascriptreact"
+  }
 }
