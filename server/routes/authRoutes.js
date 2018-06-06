@@ -10,11 +10,17 @@ module.exports = app => {
   );
 
   // callback route on successfull authentication
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
 
   app.get('/api/logout', (req, res) => {
     req.logout(); // logout() is added to req by passportJS
-    res.send(req.user);
+    res.redirect('/');
   });
 
   // to get the authenticated user
