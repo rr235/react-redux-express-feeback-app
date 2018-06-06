@@ -135,5 +135,3 @@ Proxy is set in `package.json` to target http://localhost:5000 while redirected 
 
 - Cookie Access - By default browser can share cookie only with the current domain (localhost:3000). Proxy does the hard work of taking the cookie from `localhost:3000` and copying to the request to `localhost:5000`. And then express server takes care of authentication process and redirects back to `localhost:3000`
 - Cross Origin Resource Sharing - Use of proxy also help overcome the CORS issue by not directly communicating with `localhost:5000`
-
-Testing commit username
