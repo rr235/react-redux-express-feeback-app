@@ -2,8 +2,8 @@
 
 This is a tryout app. Main focus of this exercise is to
 
-* Set up a proper dev environement
-* Create an End to End application
+- Set up a proper dev environement
+- Create an End to End application
 
 ---
 
@@ -29,9 +29,9 @@ https://www.npmjs.com/package/eslint-config-airbnb
 
 > _airbnb-config-eslint_ has following peer dependencies
 >
-> * eslint-plugin-import
-> * eslint-plugin-jsx-a11y
-> * eslint-plugin-react
+> - eslint-plugin-import
+> - eslint-plugin-jsx-a11y
+> - eslint-plugin-react
 
 [**Prettier**](https://github.com/prettier/prettier) is used for code formatting.
 
@@ -133,5 +133,7 @@ CRA has webpack, babel, HMR, etc already setup.
 
 Proxy is set in `package.json` to target http://localhost:5000 while redirected to path `'/auth/google'`. Two main reasons are
 
-* Cookie Access - By default browser can share cookie only with the current domain (localhost:3000). Proxy does the hard work of taking the cookie from `localhost:3000` and copying to the request to `localhost:5000`. And then express server takes care of authentication process and redirects back to `localhost:3000`
-* Cross Origin Resource Sharing - Use of proxy also help overcome the CORS issue by not directly communicating with `localhost:5000`
+- Cookie Access - By default browser can share cookie only with the current domain (localhost:3000). Proxy does the hard work of taking the cookie from `localhost:3000` and copying to the request to `localhost:5000`. And then express server takes care of authentication process and redirects back to `localhost:3000`
+- Cross Origin Resource Sharing - Use of proxy also help overcome the CORS issue by not directly communicating with `localhost:5000`
+
+Testing commit username
