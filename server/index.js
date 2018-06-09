@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const bodyPraser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
 require('./services/passport');
@@ -12,6 +13,9 @@ mongoose.connect(keys.mongoURI);
 
 // create an Express instance
 const app = express();
+
+// for parsing the request body
+app.use(bodyPraser.json());
 
 // enable cookie authentication
 app.use(
@@ -25,6 +29,8 @@ app.use(passport.session());
 
 // set routes for authentication
 require('./routes/authRoutes')(app);
+
+require('./routes/billingRoutes')(app);
 
 // listen for connections
 const PORT = process.env.PORT || 5000;
