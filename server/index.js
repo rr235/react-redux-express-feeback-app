@@ -6,6 +6,7 @@ const passport = require('passport');
 const bodyPraser = require('body-parser');
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 // connect to the mongoDB instance
@@ -31,6 +32,7 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if (process.env.NODE_ENV === 'production') {
   // to serve production assets (css and js)
