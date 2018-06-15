@@ -1,7 +1,8 @@
 import React from 'react';
 
-export default ({ input }) => (
+export default ({ input, label, id }) => (
   <div>
-    <input {...input} />
+    <label htmlFor={id}>{label}</label>
+    <input {...input} id={id} />
   </div>
 );
