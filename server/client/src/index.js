@@ -10,7 +10,7 @@ import App from './components/App';
 import reducers from './reducers';
 
 /* global document */
-window.axios = axios;
+window.axios = axios; // only for development
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
