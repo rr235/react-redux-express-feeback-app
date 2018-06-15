@@ -19,8 +19,8 @@
   },
   {
     "label": "Recipient List",
-    "name": "emails",
-    "id": "emails",
+    "name": "recipients",
+    "id": "recipients",
     "noValueError": "You must provide recipients' emails."
   }
 ]
