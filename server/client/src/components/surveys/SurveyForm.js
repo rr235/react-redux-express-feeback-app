@@ -3,37 +3,11 @@ import { reduxForm, Field } from 'redux-form';
 import SurveyField from './SurveyField';
 import { Link } from 'react-router-dom';
 import validateEmails from '../../utils/validateEmails';
-
-const FIELDS = [
-  {
-    label: 'Survey Title',
-    name: 'title',
-    id: 'title',
-    noValueError: 'You must provide a title.'
-  },
-  {
-    label: 'Subject Line',
-    name: 'subject',
-    id: 'subject',
-    noValueError: 'You must provide email subject.'
-  },
-  {
-    label: 'Email Body',
-    name: 'body',
-    id: 'body',
-    noValueError: 'You must provide email body.'
-  },
-  {
-    label: 'Recipient List',
-    name: 'emails',
-    id: 'emails',
-    noValueError: "You must provide recipients' emails."
-  }
-];
+import formFields from './formFields.json';
 
 class SurveyForm extends Component {
   renderFields() {
-    return FIELDS.map((field, index) => (
+    return formFields.map((field, index) => (
       <Field {...field} component={SurveyField} key={index} />
     ));
   }
@@ -61,7 +35,7 @@ function validate(values) {
 
   errors.emails = validateEmails(values.emails || '');
 
-  FIELDS.forEach(({ name, noValueError }) => {
+  formFields.forEach(({ name, noValueError }) => {
     if (!values[name]) {
       errors[name] = noValueError;
     }
@@ -72,5 +46,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'surveyForm'
+  form: 'surveyForm',
+  destroyOnUnmount: false // to retain form values on component rerender
 })(SurveyForm);

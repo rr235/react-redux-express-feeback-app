@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Campaign Title",
+    "name": "title",
+    "id": "title",
+    "noValueError": "You must provide a title."
+  },
+  {
+    "label": "Subject Line",
+    "name": "subject",
+    "id": "subject",
+    "noValueError": "You must provide email subject."
+  },
+  {
+    "label": "Email Body",
+    "name": "body",
+    "id": "body",
+    "noValueError": "You must provide email body."
+  },
+  {
+    "label": "Recipient List",
+    "name": "emails",
+    "id": "emails",
+    "noValueError": "You must provide recipients' emails."
+  }
+]
