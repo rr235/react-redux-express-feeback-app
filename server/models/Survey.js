@@ -11,7 +11,7 @@ const surveySchema = new Schema({
   yes: { type: Number, default: 0 },
   no: { type: Number, default: 0 },
   _user: { type: Schema.Types.ObjectId, re: 'User' }, // _ is like convention to show its a ref field.
-  datesent: Date,
+  dateSent: Date,
   lastResponded: Date
 });
 
