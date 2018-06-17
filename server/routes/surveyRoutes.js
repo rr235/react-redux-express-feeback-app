@@ -13,7 +13,7 @@ const Survey = mongoose.model('surveys');
 // Hence, this is a workaround to prevent that from happening.
 
 module.exports = app => {
-  app.get('/api/surveys/thanks', (req, res) => {
+  app.get('/api/surveys/:surveyId/:choice', (req, res) => {
     res.send('Thanks for voting!');
   });
 
