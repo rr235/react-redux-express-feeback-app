@@ -13,6 +13,13 @@ const Survey = mongoose.model('surveys');
 // Hence, this is a workaround to prevent that from happening.
 
 module.exports = app => {
+  app.get('/api/surveys', requireLogin, async (req, res) => {
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false
+    }); // don't include recipients,since it can b possibly be a long list
+    res.send(surveys);
+  });
+
   app.get('/api/surveys/:surveyId/:choice', (req, res) => {
     res.send('Thanks for voting!');
   });
